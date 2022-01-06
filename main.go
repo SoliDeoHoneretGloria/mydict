@@ -1,9 +1,17 @@
 package main
 
-import "github.com/SoliDeoHonertGloria/mydict"
+import (
+	"fmt"
+
+	"github.com/SoliDeoHonertGloria/mydict"
+)
 
 func main() {
 
-	Dictionary := mydict.Dictionary()
-
+	dictionary := mydict.Dictionary{"first": "First word"}
+	definition, err := dictionary.Search("first")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(definition)
 }
